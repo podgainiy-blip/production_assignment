@@ -1,0 +1,35 @@
+{
+    "profile": {
+        "default": {
+            "length": 6000,
+            "cut": 5
+        }
+    },
+    "busbar": {
+        "default": {
+            "length": 4000,
+            "cut": 10
+        }
+    },
+    "laser": {
+        "default": {
+            "width": 1250,
+            "height": 2500,
+            "cut": 5
+        }
+    },
+    "punch": {
+        "default": {
+            "width": 1200,
+            "height": 2500,
+            "cut": 15
+        }
+    },
+    "cutting": {
+        "default": {
+            "width": 1250,
+            "height": 2500,
+            "cut": 5
+        }
+    }
+}

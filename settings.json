@@ -1,0 +1,8 @@
+{
+    "rename_files": false,
+    "skip_balance": true,
+    "profile_length": 6000,
+    "profile_cut": 10,
+    "sheet_size": "1250x2500",
+    "sheet_cut": 2
+}

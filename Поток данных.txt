@@ -1,0 +1,19 @@
+1. Пользователь выбирает папку
+   ↓
+2. main_window.py запускает обработку
+   ↓
+3. excel_handler.py читает Excel и группирует по категориям
+   ↓
+4. Для каждой категории:
+   - file_manager.py создает папку
+   - excel_handler.py сохраняет отдельный Excel
+   - Для каждой детали:
+     * dxf_processor.py получает габариты из DXF
+     * cutting_engine.py собирает данные для раскроя
+     * file_manager.py копирует файлы
+   ↓
+5. После обработки всех деталей:
+   - cutting_engine.py выполняет расчет
+   - report_generator.py формирует отчет
+   - report_saver.py сохраняет отчет
+   - main_window.py выводит отчет в GUI и лог
