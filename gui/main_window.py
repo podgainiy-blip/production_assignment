@@ -618,6 +618,9 @@ class MainWindow:
             
             # Для purchased - ничего не копируем
             if category_lower == 'purchased':
+                # Гарантируем колонку ХЭШ (пустая, т.к. DXF не обрабатывается)
+                if 'ХЭШ' in category_df.columns:
+                    category_df['ХЭШ'] = ''
                 self.logger.info(f"  📋 Purchased: только Excel, файлы не копируются")
                 continue
             
@@ -710,6 +713,12 @@ class MainWindow:
                 # ========== ПРОФИЛЬ (не шина) ==========
                 if category_lower == 'profile':
                     self.logger.info(f"  📏 Обработка ПРОФИЛЯ: {detail_name}")
+
+                    # Профили: хэш не считается, колонка должна быть пустой
+                    if 'ХЭШ' in category_df.columns:
+                        category_df.at[idx, 'ХЭШ'] = ''
+
+                    # Копируем только PDF и STP (DXF не копируем)
                     
                     # Копируем только PDF и STP (DXF не копируем)
                     for ext in ['.pdf', '.stp']:

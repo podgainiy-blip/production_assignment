@@ -87,7 +87,10 @@ class ExcelHandler:
         for col in ['Поз.', 'Категория']:
             if col in category_df.columns:
                 category_df = category_df.drop(columns=[col])
-        
+                # Гарантируем наличие колонки ХЭШ во всех финальных Excel
+        if 'ХЭШ' not in category_df.columns:
+            category_df['ХЭШ'] = ''
+            
         # Сохраняем
         safe_name = sanitize_filename(category_name)
         excel_file = output_path / f"spec_{safe_name}.xlsx"
